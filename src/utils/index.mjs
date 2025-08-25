@@ -10,9 +10,7 @@ import Database from "./classes/Database.mjs";
 import GiveawaysManager from "./classes/Giveaways.mjs";
 import VoiceMaster from "./classes/VoiceMaster.mjs";
 import cache from "./cache.mjs";
-import nsfwWords from "./stuff/nsfwWords.mjs";
 import * as todClassic from "./stuff/tod/classic.mjs";
-import * as todNsfw from "./stuff/tod/nsfw.mjs";
 import * as todFunny from "./stuff/tod/funny.mjs";
 import * as invite from "./invite.mjs";
 import * as welcome from "./welcome.mjs";
@@ -24,12 +22,10 @@ import Parser from "rss-parser";
 import * as cheerio from "cheerio";
 import { auditlog } from "./auditlog.mjs";
 import { Eiyuu } from "eiyuu";
-import { NSFW } from "nsfwhub";
 import logger, { webhookLog } from "./logger.mjs";
 
 const eiyuu = new Eiyuu();
 const getURLParts = url.parse;
-const hub = new NSFW();
 
 const parser = new Parser({
   timeout: 1_0000,
@@ -52,7 +48,6 @@ export {
   logModWebhook,
   number,
   auditlog,
-  nsfwWords,
   logger,
   webhookLog,
   justreddit,
