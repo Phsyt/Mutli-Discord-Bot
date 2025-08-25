@@ -1,10 +1,14 @@
-/**
- * @author uo1428
- * @support discord.uoaio.xyz | youtobe.com/@uoaio
- * @donate patreon.com/uoaio
- * @note Dont take any type credit
- * @copyright discord.com/users/uoaio all rights reserved
- */
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000; // Use the Render-provided port or default to 3000 locally
+
+app.get('/', (req, res) => {
+  res.send('Hello World! My bot is running.');
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -20,11 +24,11 @@ import "./src/utils/Command.mjs";
 import boxen from "boxen";
 
 let aio = `Welcome to ${"Console".blue.bold} by ${
-  "ALL IN ONE | Development".red
+  "phs | Development".red
 }`;
 
-let aio_server = `\nSupport:- ${`https://discord.uoaio.xyz`.brightGreen}`;
-let Uo = `\nCoded By ${`@uoaio`.brightCyan.bold}`;
+let aio_server = `\nSupport:- ${`no`.brightGreen}`;
+let Uo = `\nCoded By ${`@phs`.brightCyan.bold}`;
 
 console.log(
   boxen(aio + aio_server + Uo, {
